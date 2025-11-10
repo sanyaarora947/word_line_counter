@@ -1,50 +1,16 @@
-# word_line_counter
-#!/bin/bash
+# Word, Line, and Character Counter (Unix Shell Script)
 
-while true
-do
-    echo "-----------------------------"
-    echo "   WORD & LINE COUNTER MENU"
-    echo "-----------------------------"
-    echo "1. Count words in a file"
-    echo "2. Count lines in a file"
-    echo "3. Count both words and lines"
-    echo "4. Exit"
-    echo "-----------------------------"
-    read -p "Enter your choice: " choice
+This shell script counts the number of lines, words, and characters in a given text file using Unix commands.
+It is a simple utility script useful for learning or basic text file analysis.
 
-    case $choice in
-        1)
-            read -p "Enter filename: " file
-            if [ -f "$file" ]; then
-                echo "Word count: $(wc -w < "$file")"
-            else
-                echo "File not found!"
-            fi
-            ;;
-        2)
-            read -p "Enter filename: " file
-            if [ -f "$file" ]; then
-                echo "Line count: $(wc -l < "$file")"
-            else
-                echo "File not found!"
-            fi
-            ;;
-        3)
-            read -p "Enter filename: " file
-            if [ -f "$file" ]; then
-                echo "Word count: $(wc -w < "$file")"
-                echo "Line count: $(wc -l < "$file")"
-            else
-                echo "File not found!"
-            fi
-            ;;
-        4)
-            echo "Exiting program..."
-            exit 0
-            ;;
-        *)
-            echo "Invalid choice! Try again."
-            ;;
-    esac
-done
+## Features
+- Counts lines, words, and characters in any text file.
+- Displays results in a clean, formatted output.
+- Checks if the file exists and handles errors gracefully.
+
+## Steps to Run the Script
+1. Save the script
+2. Give execute permission:
+      chmod +x count_file_stats.sh
+4. Run the script with a file name:
+      ./count_file_stats.sh filename.txt

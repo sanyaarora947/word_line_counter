@@ -16,3 +16,4 @@ It is a simple utility script useful for learning or basic text file analysis.
       ./count_file_stats.sh filename.txt
    ## Output
    
+      <img width="762" height="664" alt="image" src="https://github.com/user-attachments/assets/3470a1a2-c7f0-41a3-abc7-5fee471ce0eb" />

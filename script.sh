@@ -12,11 +12,46 @@ if [ ! -f "$file" ]; then
   exit 1
 fi
 
-lines=$(wc -l < "$file")
-words=$(wc -w < "$file")
-chars=$(wc -m < "$file")
+while true; do
+  echo
+  echo "========= MENU ========="
+  echo "1. Count number of lines"
+  echo "2. Count number of words"
+  echo "3. Count number of characters"
+  echo "4. Show all (lines, words, characters)"
+  echo "5. Exit"
+  echo "========================"
+  read -p "Enter your choice: " choice
 
-echo "File: $file"
-echo "Number of lines: $lines"
-echo "Number of words: $words"
-echo "Number of characters: $chars"
+  case $choice in
+    1)
+      lines=$(wc -l < "$file")
+      echo "Number of lines: $lines"
+      ;;
+    2)
+      words=$(wc -w < "$file")
+      echo "Number of words: $words"
+      ;;
+    3)
+      chars=$(wc -m < "$file")
+      echo "Number of characters: $chars"
+      ;;
+    4)
+      lines=$(wc -l < "$file")
+      words=$(wc -w < "$file")
+      chars=$(wc -m < "$file")
+
+      echo "File: $file"
+      echo "Number of lines: $lines"
+      echo "Number of words: $words"
+      echo "Number of characters: $chars"
+      ;;
+    5)
+      echo "Exiting program..."
+      exit 0
+      ;;
+    *)
+      echo "Invalid choice! Please try again."
+      ;;
+  esac
+done

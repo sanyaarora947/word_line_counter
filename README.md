@@ -14,3 +14,5 @@ It is a simple utility script useful for learning or basic text file analysis.
       chmod +x count_file_stats.sh
 4. Run the script with a file name:
       ./count_file_stats.sh filename.txt
+   ## Output
+   
